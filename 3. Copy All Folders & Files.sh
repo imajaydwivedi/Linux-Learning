@@ -13,6 +13,8 @@ cp -RT Pictures Pictures_backup
 # Copy in Multi-Threaded mode
     # https://stackoverflow.com/a/62460707
 rclone copy "${source}/${subfolder}/" "${target}/${subfolder}/" --progress --multi-thread-streams=N
+rclone copy "/fast-storage-01/study-zone/BrentOzar-Recordings/" "/stale-storage/Study-Zone/SQL Server/BrentOzar-Recordings/" --progress --multi-thread-streams=16
+
 ls /srv/mail | xargs -n1 -P4 -I% rsync -Pa % myserver.com:/srv/mail/
 
 
