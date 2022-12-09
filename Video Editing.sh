@@ -1,10 +1,13 @@
-# Merge Videos
+# Videos to Merge
 $ cat Videos-2-Merge.txt
-file '/path/to/file1'
-file '/path/to/file2'
-file '/path/to/file3'
-    
+file '04_2 - IEPT01 Online Delivery 20210315 - Day 4 _ SQLskills.mkv'
+file '04_3 - IEPT01 Online Delivery 20210315 - Day 4 _ SQLskills.mkv'
+
+# Merge 2 Videos
 $ ffmpeg -f concat -safe 0 -i Videos-2-Merge.txt -c copy Video-After-Merging.mp4
+
+# Merge & Compress 2 Videos
+$ ffmpeg -f concat -safe 0 -i Videos-2-Merge.txt -vcodec libx265 -crf 20 '04_1 - IEPT01 Online Delivery 20210315 - Day 4 _ SQLskills.mp4'
 
 ####################################################################################
 ####################################################################################
