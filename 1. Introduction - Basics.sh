@@ -30,3 +30,8 @@ cd <pid>
 cat cmdline
 cd fd
 ls -l
+
+# Find commands
+compgen -c
+whatis $(compgen -c)
+whatis $(compgen -c) 2> /dev/null

@@ -9,6 +9,9 @@ $ ffmpeg -f concat -safe 0 -i Videos-2-Merge.txt -c copy Video-After-Merging.mp4
 # Merge & Compress 2 Videos
 $ ffmpeg -f concat -safe 0 -i Videos-2-Merge.txt -vcodec libx265 -crf 20 '04_1 - IEPT01 Online Delivery 20210315 - Day 4 _ SQLskills.mp4'
 
+# Merge, Cut, Compress, Convert Videos
+$ ffmpeg -f concat -safe 0 -i Videos-2-Merge.txt -vcodec libx265 -ss 00:00:00 -to 03:52:21 -crf 20 "01_1 - IEPTO2 Online Delivery Content 20210412 - Day 1 _ SQLskills.mp4"
+
 ####################################################################################
 ####################################################################################
 
