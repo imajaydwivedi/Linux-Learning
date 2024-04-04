@@ -68,16 +68,35 @@
   > sqlcommunity
   > ajaydwivedi
   > sri Slack
+
 # Flameshot
+
 # KVM & Virt Viewer
+  > https://www.linuxtechi.com/how-to-install-kvm-on-ubuntu-22-04/
+  > https://ubuntu.com/server/docs/virtualization-virt-tools
   > Reattach virtual machines
   > Ensure network ip in subnet 192.168.100.x & 192.168.200.x
-# Shared Folders (samba)
-  > share1
-  > share2
-# Configure /etc/hosts
+  > Reboot after install
+
+# Shared Folders (samba) when using "Ubuntu-Mate-Desktop"
+  > https://linuxhint.com/share-folder-on-local-network-with-ubuntu/
+  > sudo apt install samba smbclient caja-share
+  > sudo systemctl status smbd
+  > sudo systemctl status smbd
+  > sudo ufw allow 'Samba'
+  > killall caja
+  > caja
+
+  > /stale-storage/share  -> share1
+  > /vm-storage-02/share2 --> share2
+
+# Configure /etc/hosts using SQLServerLab > Other-Scripts > etc_hosts_ubuntu.txt
+
 # NGinx
-  # configure nginx
+  > https://ubuntu.com/tutorials/install-and-configure-nginx#1-overview
+  > sudo systemctl status nginx
+  # configure /etc/nginx/nginx.conf from SQLServerLab > Other-Scripts > etc_nginx_nginx.conf
+
 # OBS Studio
 # Blender
 # balenaEtcher
@@ -124,7 +143,7 @@
 # XRdp
 # 7Zip
 # Remove orca - Screen Reader
-
+# Setup startup applications
 
 
 
