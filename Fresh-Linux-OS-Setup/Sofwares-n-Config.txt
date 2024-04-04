@@ -1,0 +1,137 @@
+# timeshift > Backup & Recovery Tool
+  > Take 1st backup
+# How to Install MATE Desktop on Ubuntu 22.04
+  # https://itsfoss.com/install-mate-desktop-ubuntu/
+  sudo apt update && sudo apt upgrade -y
+  sudo apt install ubuntu-mate-desktop
+
+  Choose "lightdm".
+  Choose "mate" from Login Screen.
+
+# guake > terminal tool
+  > Set "transparency"
+  > Tabs on Top
+  > Title in abbreviated form
+
+# Create shortcuts in Home Directory
+  > cd ~
+  > ln -s /stale-storage/Study-Zone/SQL\ Server/BrentOzar-Recordings/
+  > ln -s /stale-storage/GitHub/
+  > ln -s /stale-storage/Study-Zone/SQL\ Server/SQLSkills.com-Recording/
+  > ln -s /stale-storage/Personal/
+  > ln -s /stale-storage/Recreation-Zone/
+  > ln -s /stale-storage/share/
+  > ln -s /stale-storage/Softwares/
+
+# Configure "Disks" to mount volumes
+# Configure "MATE Tweak"
+# Configure "Control Panel" > Appearance > Themes
+> Create Home Directory Shortcuts
+  > /stale-storage/shortcuts.png
+
+# Google Chrome
+  > Setup all profiles
+    > Office, Ajay, Priti, Saanvi, Anant, SqlAgentService
+  > Login to Flipkart, Amazon, Github, GMail, YouTube
+
+# Brave Browser > Advertisement free browser
+  > Import profiles from other machine
+  > Add home page button
+  > Configure new tab settings
+
+# Tor Browser
+  > Download. Extract. Make desktop file as "Trusted".
+
+# numlockx - Enable numlock at startup
+# git
+# Fonts
+  > https://github.com/microsoft/cascadia-code
+  > https://itsfoss.com/install-fonts-ubuntu/
+  > .fonts directory in Home. Copy paste *.ttf
+
+# VS Code
+# VS Code Insiders
+# Azure Data Studio
+
+# Configure Code & Code Insiders "Git username & email"
+  > git config --global user.name "Ajay Kumar Dwivedi"
+  > git config --global user.email "ajay.dwivedi2007@gmail.com"
+
+# Python
+  > sudo apt install python-is-python3 -y
+  > python --version
+  > python3 --version
+
+# Anaconda with Jupyter Notebook
+# Slack
+  > office
+  > sqlcommunity
+  > ajaydwivedi
+  > sri Slack
+# Flameshot
+# KVM & Virt Viewer
+  > Reattach virtual machines
+  > Ensure network ip in subnet 192.168.100.x & 192.168.200.x
+# Shared Folders (samba)
+  > share1
+  > share2
+# Configure /etc/hosts
+# NGinx
+  # configure nginx
+# OBS Studio
+# Blender
+# balenaEtcher
+# SimpleScreenRecorder
+# qBittorent
+# guvcview - Camera Testing tool
+# VLC Media Player
+# Stacer
+# CPU-X
+# Cockpit
+# Apache Open Office
+# Gompris
+# SuperTux
+# Tux Math
+# Tux Paint
+# SuperTuxKart
+# Tux Typing
+# Childsplay
+# GCompris
+# GIMP
+# Zoom
+# NOtepadqq
+# Scratch
+# TimeShift
+# GParted
+# KDiskMark
+# Telegram Desktop
+# Postgres & PgAdmin
+  > Add new tablespace
+# PowerShell
+# ps modules
+  > dbatools
+  > sqlserver
+  > importexcel
+# mssql-cli
+# sql server client tools
+# Office VPN 
+# FileZilla
+# Remmina
+# HTop
+# Openssh-Server
+# ffmpeg - Video Decoding tool
+# Configure softwares for resume github repo
+# XRdp
+# 7Zip
+# Remove orca - Screen Reader
+
+
+
+
+
+#Videos to Watch
+  # 20 Things You MUST DO After Installing Ubuntu (Right Now!)
+    # https://www.youtube.com/watch?v=GrI5c9PXS5k
+  # 23 Things You MUST DO After Installing NEW Ubuntu | Ubuntu 23.10
+    # https://www.youtube.com/watch?v=YFQTSkqXf3I
+
