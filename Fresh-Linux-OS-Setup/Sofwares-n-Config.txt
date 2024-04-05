@@ -157,10 +157,22 @@
 # KDiskMark
   > https://github.com/JonMagon/KDiskMark/releases
 # Telegram Desktop
-
-
 # Postgres & PgAdmin
+  > https://medium.com/@malymohsem/say-goodbye-to-downtime-upgrade-postgresql-14-to-16-effortlessly-with-pg-upgrade-42ef4dbf8524
+  > https://www.postgresql.org/download/linux/ubuntu/
+
+  sudo sh -c 'echo "deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+  sudo apt-get update
+  sudo apt-get -y install postgresql-16
+  sudo pg_lsclusters
+
+  Conf => /etc/postgresql/16/main/postgresql.conf 
+  HBA File => /etc/postgresql/16/main/pg_hba.conf
+
   > Add new tablespace
+
+
 # PowerShell
 # ps modules
   > dbatools
