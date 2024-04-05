@@ -13,6 +13,9 @@
   > Tabs on Top
   > Title in abbreviated form
 
+# Sofware Manager
+  > sudo apt install gnome-software
+
 # Create shortcuts in Home Directory
   > cd ~
   > ln -s /stale-storage/Study-Zone/SQL\ Server/BrentOzar-Recordings/
@@ -82,13 +85,16 @@
   > https://linuxhint.com/share-folder-on-local-network-with-ubuntu/
   > sudo apt install samba smbclient caja-share
   > sudo systemctl status smbd
-  > sudo systemctl status smbd
   > sudo ufw allow 'Samba'
   > killall caja
   > caja
 
-  > /stale-storage/share  -> share1
-  > /vm-storage-02/share2 --> share2
+  > chmod +775 /hyperactive
+  > chmod +775 /vm-os/
+  > chmod +775 /vm-storage-01
+  > chmod +775 /vm-storage-02
+  > chmod +775 /stale-storage
+
 
 # Configure /etc/hosts using SQLServerLab > Other-Scripts > etc_hosts_ubuntu.txt
 
@@ -98,23 +104,49 @@
   # configure /etc/nginx/nginx.conf from SQLServerLab > Other-Scripts > etc_nginx_nginx.conf
 
 # OBS Studio
+  > sudo add-apt-repository ppa:obsproject/obs-studio
+  > sudo apt install obs-studio
+
 # Blender
+  sudo add-apt-repository ppa:thomas-schiex/blender
+  sudo apt-get update
+  sudo apt-get install blender
+
 # balenaEtcher
-# SimpleScreenRecorder
+# simplescreenrecorder - SimpleScreenRecorder
+
 # qBittorent
+  > sudo apt install qbittorrent
+
 # guvcview - Camera Testing tool
-# VLC Media Player
+# vlc - VLC Media Player
 # Stacer
+
 # CPU-X
+  > sudo apt-get install cpu-x
+
 # Cockpit
+  sudo apt-get install cockpit -y
+  sudo systemctl enable --now cockpit.socket
+  sudo usermod -aG sudo $USER
+  sudo systemctl enable cockpit cockpit.socket
+  sudo systemctl start cockpit cockpit.socket
+  sudo ufw allow 9090/tcp
+
+  sudo apt-get install podman cockpit-podman -y
+  sudo systemctl enable --now podman
+
+  sudo apt install cockpit-machines -y
+  sudo systemctl status cockpit
+
+  sudo netstat -pnltu | grep 9090
+
+
 # Apache Open Office
-# Gompris
 # SuperTux
 # Tux Math
 # Tux Paint
 # SuperTuxKart
-# Tux Typing
-# Childsplay
 # GCompris
 # GIMP
 # Zoom
@@ -123,7 +155,10 @@
 # TimeShift
 # GParted
 # KDiskMark
+  > https://github.com/JonMagon/KDiskMark/releases
 # Telegram Desktop
+
+
 # Postgres & PgAdmin
   > Add new tablespace
 # PowerShell
