@@ -166,9 +166,18 @@
   sudo apt-get update
   sudo apt-get -y install postgresql-16
   sudo pg_lsclusters
+  sudo ufw all 5432/tcp
 
   Conf => /etc/postgresql/16/main/postgresql.conf 
   HBA File => /etc/postgresql/16/main/pg_hba.conf
+
+  > Restore sample dbs
+    /PostgreSQL/14/bin> pg_restore -h localhost -d dvdrental /stale-storage/Softwares/PostgreSQL/PostgreSQL-Sample-Dbs/dvdrental.tar
+
+    > Create role before restore of forumdb 
+      > https://github.com/PacktPublishing/Learn-PostgreSQL-Second-Edition/tree/main/setup
+    /PostgreSQL/14/bin> pg_restore -h localhost -d forumdb /stale-storage/Softwares/PostgreSQL/PostgreSQL-Sample-Dbs/forumdb.tar
+
 
   > Add new tablespace
 
@@ -180,6 +189,7 @@
   > importexcel
 # mssql-cli
 # sql server client tools
+  > https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-setup-tools?view=sql-server-ver16&tabs=redhat-install
 # Office VPN 
 # FileZilla
 # Remmina
@@ -191,6 +201,21 @@
 # 7Zip
 # Remove orca - Screen Reader
 # Setup startup applications
+# Preload - Make frequent used apps
+
+# Install Media Codecs
+  > sudo apt install ubuntu-restricted-extras
+    > accept EULA
+
+# Setup Autologin for "saanvi" user
+  > https://askubuntu.com/a/1202233
+  > sudo nano /usr/share/lightdm/lightdm.conf.d/50-ubuntu-mate.conf
+    
+    autologin-user=saanvi
+
+# Remove Password Keyrings
+  > https://linuxconfig.org/how-to-disable-keyring-popup-on-ubuntu
+
 
 
 
