@@ -70,7 +70,8 @@
   > office
   > sqlcommunity
   > ajaydwivedi
-  > sri Slack
+  > Slack
+  > AdminIDE Team
 
 # Flameshot
 
@@ -102,6 +103,8 @@
   > https://ubuntu.com/tutorials/install-and-configure-nginx#1-overview
   > sudo systemctl status nginx
   # configure /etc/nginx/nginx.conf from SQLServerLab > Other-Scripts > etc_nginx_nginx.conf
+  > Test config file using -
+    sudo nginx -t
 
 # OBS Studio
   > sudo add-apt-repository ppa:obsproject/obs-studio
@@ -113,6 +116,8 @@
   sudo apt-get install blender
 
 # balenaEtcher
+  > https://github.com/balena-io/etcher/releases
+
 # simplescreenrecorder - SimpleScreenRecorder
 
 # qBittorent
@@ -143,17 +148,11 @@
 
 
 # Apache Open Office
-# SuperTux
-# Tux Math
-# Tux Paint
-# SuperTuxKart
+# Other common softwares
+  > sudo apt install supertux tuxmath tuxpaint supertuxkart gimp notepadqq scratch gparted -y
 # GCompris
-# GIMP
+  > Use "Softares"
 # Zoom
-# NOtepadqq
-# Scratch
-# TimeShift
-# GParted
 # KDiskMark
   > https://github.com/JonMagon/KDiskMark/releases
 # Telegram Desktop
@@ -166,9 +165,9 @@
   sudo apt-get update
   sudo apt-get -y install postgresql-16
   sudo pg_lsclusters
-  sudo ufw all 5432/tcp
+  sudo ufw allow 5432/tcp
 
-  Conf => /etc/postgresql/16/main/postgresql.conf 
+  Conf => /etc/postgresql/16/main/postgresql.conf
   HBA File => /etc/postgresql/16/main/pg_hba.conf
 
   > Restore sample dbs
