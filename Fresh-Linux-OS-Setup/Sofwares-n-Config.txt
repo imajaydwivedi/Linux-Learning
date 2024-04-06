@@ -189,7 +189,7 @@
 # mssql-cli
 # sql server client tools
   > https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-setup-tools?view=sql-server-ver16&tabs=redhat-install
-# Office VPN 
+# Office VPN
 # FileZilla
 # Remmina
 # HTop
@@ -215,7 +215,8 @@
 # Remove Password Keyrings
   > https://linuxconfig.org/how-to-disable-keyring-popup-on-ubuntu
 
-
+# Install missing dependencies
+  sudo apt-get install -f
 
 
 
