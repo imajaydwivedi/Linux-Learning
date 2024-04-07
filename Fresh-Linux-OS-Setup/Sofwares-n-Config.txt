@@ -170,6 +170,15 @@
   Conf => /etc/postgresql/16/main/postgresql.conf
   HBA File => /etc/postgresql/16/main/pg_hba.conf
 
+  # Add postgres path in ~/.bashrc
+    # Add postgres path
+    export PATH="$PATH:/usr/lib/postgresql/16/bin"
+    export PGDATA="/var/lib/postgresql/16/main"
+
+  source ~/.bashrc
+
+
+
   > Restore sample dbs
     /PostgreSQL/14/bin> pg_restore -h localhost -d dvdrental /stale-storage/Softwares/PostgreSQL/PostgreSQL-Sample-Dbs/dvdrental.tar
 
