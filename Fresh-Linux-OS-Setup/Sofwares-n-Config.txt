@@ -184,6 +184,21 @@
 
     > Create role before restore of forumdb 
       > https://github.com/PacktPublishing/Learn-PostgreSQL-Second-Edition/tree/main/setup
+    
+    ~/Github> sudo -u postgres psql
+    postgres=> select version();
+    postgres=> \c postgres
+    postgres=> create role luca with login password  'LearnPostgreSQL' connection limit 1;
+    postgres=> create role enrico with login password 'LearnPostgreSQL';
+    postgres=> CREATE ROLE forum WITH LOGIN PASSWORD 'LearnPostgreSQL';
+    postgres=> CREATE DATABASE forumdb WITH OWNER forum;
+    postgres=> \c forumdb
+    postgres=> SET ROLE TO forum;
+    postgres=> CREATE SCHEMA forum AUTHORIZATION forum;
+    postgres=> SET default_tablespace = '';
+    postgres=> SET default_table_access_method = heap;
+
+
     /PostgreSQL/14/bin> pg_restore -h localhost -d forumdb /stale-storage/Softwares/PostgreSQL/PostgreSQL-Sample-Dbs/forumdb.tar
 
 
