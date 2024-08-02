@@ -4,3 +4,7 @@ blueman-manager 08.39.17 ERROR    Manager:141 on_dbus_name_appeared: No adapter(
 (base) saanvi@ryzen9:/stale-storage/GitHub/Linux-Learning$ 
 
 
+Resolution:-
+    Shutdown desktop from Power Button at the back of Cabinet
+
+
