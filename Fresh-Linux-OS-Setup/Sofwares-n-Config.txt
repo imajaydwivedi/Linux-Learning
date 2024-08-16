@@ -295,6 +295,13 @@
 
 # Create softlinks for Study Videos
 cd ~
+
+ln -s "/stale-storage/GitHub"
+ln -s "/stale-storage/Personal"
+ln -s "/stale-storage/Recreation-Zone"
+ln -s "/stale-storage/share"
+ln -s "/stale-storage/Softwares"
+
 mkdir Study-Videos
 cd Study-Videos
 ln -s "/stale-storage/Study-Zone/Linux/Complete Linux Bash Shell Scripting with Real Life Examples" 
