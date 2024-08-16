@@ -293,3 +293,17 @@
   # 23 Things You MUST DO After Installing NEW Ubuntu | Ubuntu 23.10
     # https://www.youtube.com/watch?v=YFQTSkqXf3I
 
+# Create softlinks for Study Videos
+cd ~
+mkdir Study-Videos
+cd Study-Videos
+ln -s "/stale-storage/Study-Zone/Linux/Complete Linux Bash Shell Scripting with Real Life Examples" 
+ln -s "/stale-storage/Study-Zone/SQL Server/BrentOzar-Recordings"
+ln -s "/stale-storage/Study-Zone/SQL Server/SQLSkills.com-Recording"
+ln -s "/stale-storage/Study-Zone/Python/Complete Python Bootcamp"
+ln -s "/stale-storage/Study-Zone/Python/Udemy - python-and-django-full-stack-web-developer-bootcamp"
+ln -s "/stale-storage/Study-Zone/Python/Udemy - Django Core A Reference Guide to Core Django Concepts"
+ln -s "/stale-storage/Study-Zone/Python/Rest API with Django Framework"
+ln -s "/stale-storage/Study-Zone/Python/Intermediate Python Programming Course.mp4"
+ln -s "/stale-storage/Study-Zone/Virtualization/Docker and Kubernetes The Complete Guide"
+
