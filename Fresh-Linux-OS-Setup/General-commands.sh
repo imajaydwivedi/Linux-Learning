@@ -53,3 +53,22 @@ following is color coding to follow -
 - $ should be in Yellow
 
 <# *************************************************************************** #>
+
+
+
+
+# Configure prompt in Mac Zsh shell (Macbook)
+  # https://stackoverflow.com/a/2534676/4449743
+
+#> nano ~/.zshrc
+  -----------------------------------------------------------
+  autoload -U colors && colors
+  NEWLINE=$'\n'
+  PS1="----- %{$fg[green]%}[%D{%G-%b-%d} %*]%{$reset_color%} %{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m %{$fg[blue]%}(%(5~|%-1~/.../%3~|%4~)) ${NEWLINE}|----------%{$reset_color%}%% "
+  TMOUT=1
+  TRAPALRM() {
+      zle reset-prompt
+  }
+
+  -----------------------------------------------------------
+
