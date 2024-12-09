@@ -39,6 +39,20 @@ else
     #PS1='\[\033[40m\]---- [\033[32m\]$(date +"%Y-%b-%d %H:%M:%S")\[\033[00m\]] \[\033[33m\]\u@\h\[\033[00m\]:\[\033[34m\]\W\[\033[00m\]\n|---------- \[\033[33m\]\$\[\033[0m\]'
 fi
 
+# Define colors
+GREEN='\[\033[32m\]'
+RED='\[\033[31m\]'
+YELLOW='\[\033[33m\]'
+BLUE='\[\033[34m\]'
+RESET='\[\033[0m\]'
+
+# Define a newline
+NEWLINE='\n'
+
+# Custom prompt
+PS1="----- ${GREEN}[\$(date +'%Y-%b-%d %H:%M:%S')]${RESET} ${RED}\u${RESET}@${YELLOW}\h${RESET} ${BLUE}(\$(pwd | sed -e 's|.*/||'))${RESET}${NEWLINE}|------------\$ "
+
+
 <# *************************************************************************** #>
 I want Prompt in following format ->
 
