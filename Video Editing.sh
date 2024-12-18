@@ -14,6 +14,19 @@ $ ffmpeg -f concat -safe 0 -i Videos-2-Merge.txt -vcodec libx265 -ss 00:00:00 -t
 
 ####################################################################################
 ####################################################################################
+# Command to Combine Audio and Video from YouTube
+
+# for synchronized video/audio files with Compressed format
+ffmpeg -i Algo-Video.mp4 -i Algo-Audio.webm -c:v libx264 -preset faster -crf 23 -c:a aac -b:a 128k Algo.mp4
+
+# for synchonized files without compression
+ffmpeg -i Algo-Video.mp4 -i Algo-Audio.webm -c:v copy -c:a aac -strict experimental Algo.mp4
+
+#
+
+
+####################################################################################
+####################################################################################
 
 # Full Convert/Compress
 ffmpeg -i "InputFile.mkv" -vcodec libx265 -crf 20 "InputFile.mp4"
