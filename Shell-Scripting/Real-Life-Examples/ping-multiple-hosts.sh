@@ -8,12 +8,15 @@ then
   IFS=',' read -ra hosts <<< "$1"
 else
   # Fetch unique IPv4 addresses from /etc/hosts
+  #hosts=("192.168.1.1" "192.168.1.2" "192.168.1.3")
   readarray -t hosts < <(awk '$1 ~ /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/ {print $1}' /etc/hosts | sort -u)
 fi
 
+hosts_file="~/my_hosts_to_check_health.txt"
 
 # Print header with tabular formatting and underline
 printf "\033[4m%-20s\t%-10s\033[0m\n" "Host" "Status"
+#for host in $(cat $hosts_file)
 for host in "${hosts[@]}"; do
     ping -c1 "$host" &> /dev/null
     if [ $? -eq 0 ]; then
