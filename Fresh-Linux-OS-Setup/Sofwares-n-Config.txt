@@ -39,6 +39,7 @@
   # configure password less ssh 
     # https://www.rosehosting.com/blog/how-to-enable-ssh-on-ubuntu-for-20-04-22-04/
   ssh-keygen
+  ssh-copy-id saanvi@msi
 
 # NOTE: Start a GUI software on remote SSH session
   ssh -X msi
