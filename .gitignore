@@ -26,6 +26,7 @@
 /Sql-Queries-Volatile/*
 /Volatile/*
 /Private/*
+/home/*
 /Private/Private.ssmssqlproj
 /Sensitive/Sensitive.ssmssqlproj
 /Volatile/Volatile.ssmssqlproj
