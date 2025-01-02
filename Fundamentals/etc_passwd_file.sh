@@ -1,7 +1,27 @@
 :<<'COMMENTS'
 
+-> Users and their properties are stored in /etc/passwd
+-> Common properties are:
+    - Username
+    - Password Placeholder
+    - User ID (UID)
+    - Group ID (GID) : the ID of the primary group of the user
+    - User Info (GECOS) AKA Comment Field
+    - Home Directory: the default directory where the  user will land after logging in
+    - Default Shell: the program that is started after user login
+
+-> System users have a UID < 1000
+-> System users mostly have /bin/false or /usr/sbin/nologin as their default shell
+-> Only Regular users have /bin/bash as their default shell
+-> Use "getent passwd username" to list current /etc/passwd properties for the user
+-> Notice that passwords are stored in /etc/shadow
+-> Use "vipw" to edit /etc/passwd and /etc/shadow settings directly
+
+
 Sample /etc/passwd Entry
 ------------------------
+> getent passwd saanvi
+
 saanvi:x:1001:1001:Saanvi User,,,:/home/saanvi:/bin/bash
 
 
