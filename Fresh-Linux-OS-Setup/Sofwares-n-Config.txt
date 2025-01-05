@@ -56,6 +56,7 @@
   192.168.1.10 sqlmonitor
   192.168.1.11 workstation
   192.168.1.12 sqlpractice
+  192.168.1.18 pgprod
   192.168.1.20 aghost-1a
   192.168.1.21 aghost-1b
   
@@ -85,14 +86,35 @@
   > sudo apt install gnome-software
 
 # Create shortcuts in Home Directory
-  > cd ~
-  > ln -s /stale-storage/Study-Zone/SQL\ Server/BrentOzar-Recordings/
-  > ln -s /stale-storage/GitHub/
-  > ln -s /stale-storage/Study-Zone/SQL\ Server/SQLSkills.com-Recording/
+find ~ -maxdepth 1 -type l
+
   > ln -s /stale-storage/Personal/
+  > ln -s /stale-storage/GitHub/
   > ln -s /stale-storage/Recreation-Zone/
-  > ln -s /stale-storage/share/
   > ln -s /stale-storage/Softwares/
+  > ln -s /stale-storage/share/
+
+# Create shortcuts in subdirectories on homedirectory
+mkdir 'Study-Videos'
+cd 'Study-Videos'
+find . -maxdepth 1 -type l
+find . -maxdepth 1 -type l -exec sh -c 'printf "ln -s \"%s\"\n" "$(readlink -f "$1")"' _ {} \;
+find . -maxdepth 1 -type l -exec sh -c 'printf "ln -s \"%s\" \"%s\"\n" "$(readlink -f "$1")" "$1"' _ {} \;
+
+    ln -s "/stale-storage/Study-Zone/Linux/LiveLessons - Linux Under the Hood"
+    ln -s "/stale-storage/Study-Zone/Python/Intermediate Python Programming Course.mp4"
+    ln -s "/stale-storage/Study-Zone/Ansible/Red Hat Certified Engineer (RHCE) EX294 Red Hat Ansible Automation"
+    ln -s "/stale-storage/Study-Zone/Linux/Bash Shell Scripting From Zero To Automation"
+    ln -s "/stale-storage/Study-Zone/Ansible/Ansible Core Concepts and Advanced Features"
+    ln -s "/stale-storage/Study-Zone/Virtualization/Docker and Kubernetes The Complete Guide"
+    ln -s "/stale-storage/Study-Zone/Linux/Linux Fundamentals - 2nd Edition"
+    ln -s "/stale-storage/Study-Zone/Data Structures & Algorithms/Data Structures and Algorithms The Complete Masterclass"
+    ln -s "/stale-storage/Study-Zone/Ansible/Automating with Ansible"
+    ln -s "/stale-storage/Study-Zone/SQL Server/BrentOzar-Recordings"
+    ln -s "/stale-storage/Study-Zone/Linux/Complete Linux Bash Shell Scripting with Real Life Examples"
+    ln -s "/stale-storage/Study-Zone/SQL Server/SQLSkills.com-Recording"
+    ln -s "/stale-storage/Study-Zone/Data Structures & Algorithms/FreeCodeCamp - Algorithms and Data Structures Tutorial - Full Course for Beginners - 5.5 Hrs.mp4"
+    ln -s "/stale-storage/Study-Zone/Virtualization/Hands-on with Podman Containers on Linux"
 
 
 # Google Chrome
@@ -254,9 +276,9 @@
   > Restore sample dbs
     /PostgreSQL/14/bin> pg_restore -h localhost -d dvdrental /stale-storage/Softwares/PostgreSQL/PostgreSQL-Sample-Dbs/dvdrental.tar
 
-    > Create role before restore of forumdb 
+    > Create role before restore of forumdb
       > https://github.com/PacktPublishing/Learn-PostgreSQL-Second-Edition/tree/main/setup
-    
+
     ~/Github> sudo -u postgres psql
     postgres=> select version();
     postgres=> \c postgres
