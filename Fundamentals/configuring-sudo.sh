@@ -14,11 +14,13 @@ Alternatively, add drop-in files to /etc/sudoers.d/ directory
     # allowed adwivedi user to run passwd command but not as root
     adwivedi ALL=/usr/bin/passwd, ! /usr/bin/passwd root, /usr/sbin/useradd, /usr/sbin/usermod
 
+# Increase sudo Password Timeout to 4 Hours
 Add the following to cache valid sudo credentials for 4 hours:
 
     Defaults timestamp_type=global,timestamp_timeout=240
 
 # tail -5 /etc/sudoers
+sudo cat /etc/sudoers | grep timestamp
 
 Examples:
 
