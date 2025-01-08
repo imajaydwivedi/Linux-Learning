@@ -377,3 +377,21 @@ yt-dlp -U
 https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#usage-and-options
 
 
+# Games to install
+  # https://apps.kde.org/en-gb/categories/games/
+
+## Language Learning (letters)
+sudo apt install -y klettres
+
+## Paint
+sudo apt install -y kolourpaint
+
+## Clone of Bomberman
+sudo apt install -y granatier
+
+## Clone of Packman
+sudo apt install -y kapman
+
+## KGoldrunner - Similar to Tobi on the Run
+sudo apt install -y kgoldrunner
+
