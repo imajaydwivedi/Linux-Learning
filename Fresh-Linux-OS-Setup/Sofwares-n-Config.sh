@@ -259,6 +259,13 @@ find . -maxdepth 1 -type l -exec sh -c 'printf "ln -s \"%s\" \"%s\"\n" "$(readli
   sudo pg_lsclusters
   sudo ufw allow 5432/tcp
 
+  # check udp 1434
+  nc -vuz 192.168.1.6 1434
+
+  # check tcp 5432
+  nc -vz 192.168.1.6 5432
+
+
   Conf => /etc/postgresql/16/main/postgresql.conf
   HBA File => /etc/postgresql/16/main/pg_hba.conf
 
@@ -395,3 +402,19 @@ sudo apt install -y kapman
 ## KGoldrunner - Similar to Tobi on the Run
 sudo apt install -y kgoldrunner
 
+# TuxMath Server
+sudo ss -tunap | grep tuxmath
+
+# Check port (check connectivity on port)
+nc -vz 192.168.1.6 4779
+
+  :<<'COMMAND_OUTPUT'
+(base) ----- [2025-Jan-11 19:32:29] saanvi@ryzen9 (Linux-Learning)
+|------------$ sudo ss -tunap | grep tuxmath
+
+udp   UNCONN     0      0                                  0.0.0.0:4779             0.0.0.0:*     users:(("tuxmath",pid=130513,fd=22))
+tcp   LISTEN     0      5                                  0.0.0.0:4779             0.0.0.0:*     users:(("tuxmath",pid=130513,fd=21))
+tcp   ESTAB      0      0                              192.168.1.6:4779         192.168.1.6:55118 users:(("tuxmath",pid=130513,fd=24))
+tcp   ESTAB      0      0                              192.168.1.6:55118        192.168.1.6:4779  users:(("tuxmath",pid=130513,fd=23))
+
+COMMAND_OUTPUT
