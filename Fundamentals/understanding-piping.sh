@@ -64,6 +64,8 @@ curl -L "https://example.com/file.tar.gz" | tar -xz
 # Find and Replace Across Multiple Files
 grep -rl "foo" . | xargs sed -i 's/foo/bar/g'
 
+# Get Tree view of *.mkv files in folder '/hyperactive/Mastering AI Agents for Databases'
+find "/hyperactive/Mastering AI Agents for Databases" -type f -name "*.mkv" | sed 's|/[^/]*$||' | sort | uniq | xargs -I {} tree -P "*.mkv" {}
 
 
 COMMENTS
