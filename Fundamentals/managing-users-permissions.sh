@@ -54,8 +54,11 @@ sudo useradd -m bill
 
 # To Restrict GUI login in lightdm (nologin)
     # https://askubuntu.com/a/575390
-sudo nano /var/lib/AccountsService/users/ajay
+sudo nano /var/lib/AccountsService/users/student
 
+[User]
+Session=
+Icon=/home/student/.face
 SystemAccount=true
 
 sudo systemctl restart accounts-daemon.service
