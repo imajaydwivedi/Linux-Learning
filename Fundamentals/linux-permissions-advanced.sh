@@ -128,7 +128,7 @@ sudo ls -ld /dba_files
     # drwxr-xr-x 2 root root 4096 Jan  4 18:57 /dba_files
 
 # change group ownership of dba_files to "dba"
-sudo chgrp dba /dba_files
+sudo chgrp -R  dba /dba_files
 sudo chmod 770 /dba_files
 sudo ls -ld /dba_files
     # drwxr-xr-x 2 root dba 4096 Jan  4 18:57 /dba_files
