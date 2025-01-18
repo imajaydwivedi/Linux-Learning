@@ -67,6 +67,15 @@ Working with Sofware Managers
 
 -> Common software managers are "yum/dnf" and "apt"
 
+# Enable extra repos in rhel
+sudo dnf install \
+https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+
+sudo dnf install snapd -y
+sudo dnf install tldr -y
+
+
+
 
 Managing Packages with yum/dnf
 ---------------------------------
