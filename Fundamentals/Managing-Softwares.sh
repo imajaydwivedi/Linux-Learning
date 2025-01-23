@@ -127,6 +127,9 @@ Understanding apt
 
 -> Use "apt search" to search for packages
 
+-> Use "apt list --installed" to get installed packages
+sudo apt list --installed | grep cow
+
 -> Use "apt install" to remove packages
     -> If a package contains a service, it will be started and enabled automatically
 
