@@ -1,6 +1,11 @@
 # Update & upgrade
   sudo apt update -y && sudo apt upgrade -y
 
+# Install pip
+  pip3 show psutil
+  sudo apt install python3-pip -y
+  sudo pip3 install psutil --break-system-packages
+
 # guake > terminal tool
   > Set "transparency"
   > Tabs on Top
@@ -16,6 +21,9 @@
 
   Choose "lightdm".
   Choose "mate" from Login Screen.
+
+# Install configuration editor
+  sudo apt install dconf-editor -y
 
   # Configure "Disks" to mount volumes
   # Configure "MATE Tweak"
