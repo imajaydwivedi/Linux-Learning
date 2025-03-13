@@ -28,12 +28,8 @@ https://en1.savefrom.net/1-youtube-video-downloader-3vV/
 
 ## for synchronized video/audio files with Compressed format
 ```
-ffmpeg -i Algo-Video.mp4 -i Algo-Audio.webm -c:v libx264 -preset faster -crf 20 -c:a aac -b:a 128k Algo.mp4
-ffmpeg -i Algo-Video.mp4 -i Algo-Audio.webm -vcodec libx265 -crf 20 "InputFile.mp4"
+ffmpeg -i tutorial-video.mp4 -i videoplayback.mp3 -c:v copy -c:a aac -strict experimental -map 0:v:0 -map 1:a:0 "Vim-tutorial-for-beginners.mp4"
 ```
-
-## for synchonized files without compression
-`ffmpeg -i Algo-Video.mp4 -i Algo-Audio.webm -c:v copy -c:a aac -strict experimental Algo.mp4`
 
 #
 
