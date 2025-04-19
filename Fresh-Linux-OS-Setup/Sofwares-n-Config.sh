@@ -1,3 +1,71 @@
+# Install OS with inet1/inet2 adapter
+
+# Create Bridged Network for KVM machines
+  # https://www.xmodulo.com/configure-linux-bridge-network-manager-ubuntu.html
+
+# Configure static Ipv4 for inet1 adapter
+  # Find ethernets
+  ip link show
+
+  # On Ubuntu, Edit network-manager-all.yaml
+  sudo nano /etc/netplan/01-network-manager-all.yaml
+
+    # Add following content after changing ip addresses
+    network:
+      version: 2
+      renderer: NetworkManager
+      ethernets:
+        enp1s0:
+          dhcp4: no
+          addresses: [192.168.100.36/24]
+          nameservers:
+            addresses: [192.168.100.10, 192.168.100.1]
+          routes:
+            - to: 192.168.100.0/24
+              scope: link
+            - to: 192.168.200.0/24
+              via: 192.168.100.1
+
+    # Apply the changes
+    sudo chmod 600 /etc/netplan/01-network-manager-all.yaml
+    sudo netplan apply
+
+  # On Rhel, Edit file /etc/NetworkManager/system-connections/<link>.nmconnection
+    sudo nano /etc/NetworkManager/system-connections/enp1s0.nmconnection
+
+      # Look for ipv4 section, or create is missing
+      [connection]
+      id=enp1s0
+      type=ethernet
+      interface-name=enp1s0
+      autoconnect=true
+
+      [ipv4]
+      method=manual
+      addresses=192.168.100.34/24
+      dns=192.168.100.10;192.168.100.1;
+      routes=192.168.100.0/24;;0;192.168.200.0/24,192.168.100.1,0;
+      route-metric=200
+
+    # fix permission, and reload settings
+    sudo chmod 600 /etc/NetworkManager/system-connections/enp1s0.nmconnection
+    sudo nmcli connection reload
+    sudo nmcli connection up enp1s0
+    ip addr show enp1s0
+    ip route show
+
+
+# Openssh-Server
+  # On ubuntu
+    sudo apt install -y openssh-client openssh-server
+    sudo systemctl enable ssh
+    sudo systemctl status ssh
+    sudo ufw allow ssh
+
+  # On Rhel
+    sudo systemctl status sshd
+
+
 # Update & upgrade
   sudo apt update -y && sudo apt upgrade -y
 
@@ -33,16 +101,6 @@
   > Create Home Directory Shortcuts
     > /stale-storage/shortcuts.png
 
-
-# Create Bridged Network for KVM machines
-  # https://www.xmodulo.com/configure-linux-bridge-network-manager-ubuntu.html
-
-
-# Openssh-Server
-  sudo apt install openssh-client openssh-server
-  sudo systemctl enable ssh
-  sudo systemctl status ssh
-  sudo ufw allow ssh
 
   # configure password less ssh 
     # https://www.rosehosting.com/blog/how-to-enable-ssh-on-ubuntu-for-20-04-22-04/
