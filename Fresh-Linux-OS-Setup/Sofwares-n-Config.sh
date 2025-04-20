@@ -54,6 +54,15 @@
     ip addr show enp1s0
     ip route show
 
+# Enable bridge interface for dhcp
+  # On Rhel
+  sudo nmcli device up enp7s0
+  sudo nmcli con mod enp7s0 ipv4.method auto
+  sudo nmcli con up enp7s0
+  # On Ubuntu
+  sudo netplan set ethernets.enp7s0.dhcp4=true
+  sudo netplan apply
+
 
 # Openssh-Server
   # On ubuntu
