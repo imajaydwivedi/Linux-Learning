@@ -1,5 +1,13 @@
 # Install OS with inet1/inet2 adapter
 
+# For Ansible create, following users
+  sudo -i -u root
+
+  adduser ansible
+  addgroup sudo-nopw
+  echo '%sudo-nopw ALL=(ALL:ALL) NOPASSWD:ALL' | sudo tee /etc/sudoers.d/sudo-nopw > /dev/null
+  usermod -aG sudo-nopw ansible
+
 # Create Bridged Network for KVM machines
   # https://www.xmodulo.com/configure-linux-bridge-network-manager-ubuntu.html
 
@@ -8,6 +16,8 @@
   ip link show
 
   # On Ubuntu, Edit network-manager-all.yaml
+  sudo -i -u root
+  ls -l /etc/netplan
   sudo nano /etc/netplan/01-network-manager-all.yaml
 
     # Add following content after changing ip addresses
@@ -21,10 +31,10 @@
           nameservers:
             addresses: [192.168.100.10, 192.168.100.1]
           routes:
-            - to: 192.168.100.0/24
+            - to: 192.168.0.0/16
               scope: link
-            - to: 192.168.200.0/24
-              via: 192.168.100.1
+            #- to: 192.168.200.0/24
+            #  via: 192.168.100.1
 
     # Apply the changes
     sudo chmod 600 /etc/netplan/01-network-manager-all.yaml
@@ -35,17 +45,18 @@
 
       # Look for ipv4 section, or create is missing
       [connection]
-      id=enp1s0
-      type=ethernet
       interface-name=enp1s0
       autoconnect=true
+      peerdns=no
 
       [ipv4]
-      method=manual
-      addresses=192.168.100.34/24
+      address1=192.168.100.34/24
       dns=192.168.100.10;192.168.100.1;
-      routes=192.168.100.0/24;;0;192.168.200.0/24,192.168.100.1,0;
-      route-metric=200
+      dns-search=lab.com;
+      method=manual
+      route-metric=100
+      route1=192.168.0.0/16
+      ignore-auto-dns=true
 
     # fix permission, and reload settings
     sudo chmod 600 /etc/NetworkManager/system-connections/enp1s0.nmconnection
@@ -63,6 +74,15 @@
   sudo netplan set ethernets.enp7s0.dhcp4=true
   sudo netplan apply
 
+
+# Fix /etc/resolv.conf on Redhat OS
+  # sudo cat /etc/resolv.conf
+    search lab.com
+    nameserver 192.168.100.10
+    nameserver 192.168.100.1
+    nameserver 8.8.8.8
+  # mark /etc/resolv.conf not for change after reboot
+    # sudo chattr +i /etc/resolv.conf
 
 # Openssh-Server
   # On ubuntu
