@@ -33,8 +33,8 @@
           routes:
             - to: 192.168.0.0/16
               scope: link
-            #- to: 192.168.200.0/24
-            #  via: 192.168.100.1
+            - to: 192.168.200.0/24
+              via: 192.168.100.10
 
     # Apply the changes
     sudo chmod 600 /etc/netplan/01-network-manager-all.yaml
