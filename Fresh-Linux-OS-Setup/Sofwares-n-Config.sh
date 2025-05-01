@@ -31,11 +31,11 @@
           nameservers:
             addresses: [192.168.100.10, 192.168.100.1]
           routes:
-            - to: 192.168.100.0/24
+            - to: 192.168.0.0/16
               #scope: link
               via: 192.168.100.10
-            - to: 192.168.200.0/24
-              via: 192.168.100.10
+            #- to: 192.168.200.0/24
+            #  via: 192.168.100.10
 
     # Apply the changes
     sudo chmod 600 /etc/netplan/01-network-manager-all.yaml
