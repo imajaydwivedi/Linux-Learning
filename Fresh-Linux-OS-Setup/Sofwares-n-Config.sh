@@ -514,5 +514,6 @@ tcp   ESTAB      0      0                              192.168.1.6:55118        
 
 COMMAND_OUTPUT
 
-
+# Install network related tools
+sudo apt install -y net-tools
 
