@@ -42,27 +42,34 @@
     sudo netplan apply
 
   # On Rhel, Edit file /etc/NetworkManager/system-connections/<link>.nmconnection
-    sudo nano /etc/NetworkManager/system-connections/enp1s0.nmconnection
+    sudo nmcli connection modify enp1s0 \
+    ipv4.addresses "192.168.100.46/24" \
+    ipv4.gateway "192.168.100.10" \
+    ipv4.dns "192.168.100.10;8.8.8.8" \
+    ipv4.method manual
 
-      # Look for ipv4 section, or create is missing
+    or
+
+    sudo cat /etc/NetworkManager/system-connections/enp1s0.nmconnection
       [connection]
+      id=enp1s0
       interface-name=enp1s0
+      type=ethernet
       autoconnect=true
-      peerdns=no
 
       [ipv4]
-      address1=192.168.100.34/24
-      dns=192.168.100.10;192.168.100.1;
-      dns-search=lab.com;
+      address1=192.168.100.46/24,192.168.100.10
+      dns=192.168.100.10;8.8.8.8;
       method=manual
-      route-metric=100
-      route1=192.168.0.0/16
-      ignore-auto-dns=true
+
+      [ipv6]
+      addr-gen-mode=eui64
+      method=auto
 
     # fix permission, and reload settings
     sudo chmod 600 /etc/NetworkManager/system-connections/enp1s0.nmconnection
-    sudo nmcli connection reload
-    sudo nmcli connection up enp1s0
+    sudo nmcli device reload
+    sudo nmcli device up enp1s0
     ip addr show enp1s0
     ip route show
 
