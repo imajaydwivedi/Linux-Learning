@@ -19,6 +19,7 @@
   sudo -i -u root
   ls -l /etc/netplan
   sudo nano /etc/netplan/01-network-manager-all.yaml
+  sudo nano /etc/netplan/50-cloud-init.yaml
 
     # Add following content after changing ip addresses
     network:
