@@ -74,8 +74,8 @@
 
     # fix permission, and reload settings
     sudo chmod 600 /etc/NetworkManager/system-connections/enp1s0.nmconnection
-    sudo nmcli device reload
-    sudo nmcli device up enp1s0
+    sudo nmcli con down enp1s0
+    sudo nmcli con up enp1s0
     ip addr show enp1s0
     ip route show
 
@@ -90,7 +90,7 @@
 
 
 # Fix /etc/resolv.conf on Redhat OS
-  # sudo cat /etc/resolv.conf
+  # sudo vim /etc/resolv.conf
     search lab.com
     nameserver 192.168.100.10
     nameserver 192.168.100.1
