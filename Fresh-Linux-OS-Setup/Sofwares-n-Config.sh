@@ -58,13 +58,19 @@
       autoconnect=true
 
       [ipv4]
-      address1=192.168.100.46/24,192.168.100.10
+      address1=192.168.100.46/24
       dns=192.168.100.10;8.8.8.8;
       method=manual
+      never-default=true
+      route1=192.168.200.0/24,192.168.100.10,100
 
       [ipv6]
       addr-gen-mode=eui64
       method=auto
+
+    or
+
+    sudo nmtui
 
     # fix permission, and reload settings
     sudo chmod 600 /etc/NetworkManager/system-connections/enp1s0.nmconnection
